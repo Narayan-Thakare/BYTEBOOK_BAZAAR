@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Table</title>
+
+    <style>
+        h1 {
+            position: relative;
+            text-align: center;
+            color: #353535;
+            font-size: 50px;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00DA98; /* Greenish color for the button */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50; /* Dark green color for table headers */
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Light grayish color for even rows */
+        }
+
+        a {
+            text-decoration: none;
+            margin-right: 10px;
+            color: #333;
+        }
+
+        a:hover {
+            color: #DDDBA5; /* Dark green color on hover */
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00DA98; /* Greenish color for the button */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+
+<script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <h1>Generated Bill</h1>
+    <a href="/" class="button">HOME</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Language</th>
+                <th>Number of Pages</th>
+                <th>Genre</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>Date</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="book : ${show}">
+                <td th:text="${book.title}">Default Title</td>
+                <td th:text="${book.author}">Default Author</td>
+                <td th:text="${book.language}">Default Language</td>
+                <td th:text="${book.number_of_pages}">0</td>
+                <td th:text="${book.genre}">Default Genre</td>
+                <td th:text="${book.newQuantity}">0</td>
+                <td th:text="${book.rate}">0</td>
+                <td th:text="${book.date}">0</td>
+                <td th:text="${book.newQuantity * book.rate}">0</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="8"></td>
+                <td id="totalCell">0</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+
+
+       <form action="#" th:action="@{/generatedata}" id="generateBillForm">
+        <input type="submit" value="Generate Bill" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin: 0 auto; display: block;">
+    </form>
+
+
+<a th:href="@{/openpdf/sellbook}" class="btn btn-primary" target="_blank" role="button">Download PDF</a>
+
+
+
+    <!-- Script to calculate the total -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var totalCell = document.getElementById("totalCell");
+            var total = 0;
+
+            // Loop through each row in the table body
+            var tableBodyRows = document.querySelectorAll("tbody tr");
+            tableBodyRows.forEach(function (row) {
+                // Get the total value from the last cell in each row and add it to the total variable
+                var rowTotal = parseFloat(row.lastElementChild.textContent);
+                total += isNaN(rowTotal) ? 0 : rowTotal;
+            });
+
+            // Set the total value in the total cell
+            totalCell.textContent = total.toFixed(2); // You can adjust the number of decimal places as needed
+        });
+    </script>
+
+    <!-- Script to generate PDF -->
+ 
+
+</body>
+
+</html>

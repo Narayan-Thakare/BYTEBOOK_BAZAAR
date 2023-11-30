@@ -1,13 +1,669 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Book Store Management and Sell</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(https://i.pinimg.com/564x/f2/1c/2f/f21c2f27294e010cdc2af50533b90228.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;            
+        }
+
+        .header {
+            background-color: #AC8F8F;
+            color: #mnp;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .dashboard-item {
+            padding: 20px;
+            background-color: #EDEDED;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+      /*   .dashboard-item:hover {
+            background-color: skyblue;
+        }
+ */
+ 
+ h1 {
+  position: relative;
+  text-align: center;
+  color: #353535;
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+}
+ 
+        .dashboard-item h2 {
+            position: relative;
+  text-align: center;
+  color: #353535;
+  font-size: 20px;
+  font-family: "Cormorant Garamond", serif;
+        }
+
+        form {
+            margin-top: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            border-color: #007bff;
+        }
+
+        .btn-primary {
+            padding: 10px 20px;
+            background-color: pink;
+            color: #mnp;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: lightyellow;
+        }
+        
+        
+           
+          a.button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #00DA98; /* Greenish color for the button */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+        
+       
+        
+    </style>
 </head>
 <body>
+  <header class="header">
+    <div class="container">
+        <h1>Book Store Management and Sell</h1>
+    </div>
+</header>
+
+        
+        
+        
+    <div class="container">
+        <div class="dashboard">
+            <div class="dashboard-item">
+                <h2>Add New Books </h2>
+                
+ <style>
+  /* .btn-12{
+  position: relative;
+  right: 110px;
+  bottom: 20px;
+  border:none;
+  box-shadow: none;
+  width: 0px;
+  height: 60px;
+  line-height: 42px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+}
+ */
 
 
-welcome
+.btn-12 {
+  position: relative;
+  right: 110px;
+  bottom: 20px;
+  border: none;
+  box-shadow: none;
+  width: 0px; /* Adjusted width */
+  height: 60px;
+  line-height: 42px; /* Adjusted line-height */
+  perspective: 1230px;
+}
 
+
+
+
+
+
+.btn-12 span {
+  background: rgba(0, 172, 238, 0); /* Fully transparent */
+background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  display: block;
+  position: absolute;
+  width: 190px;
+  height: 40px;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 5px;
+  margin:0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.btn-12 span:nth-child(1) {
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.btn-12 span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+  
+}
+.btn-12:hover span:nth-child(1) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  
+}
+.btn-12:hover span:nth-child(2) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+ color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+
+
+ .btn-margin {
+    margin-right: 1190px; /* Adjust the margin as needed */
+  }
+</style>
+
+
+
+<style>
+
+
+
+h1 {
+  position: relative;
+  text-align: center;
+  color: #353535;
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 18px;
+  color: #676767;
+}
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+button {
+  margin: 20px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+
+
+/* 11 */
+.btn-11 {
+  border: none;
+  background: rgb(251,33,117);
+    background: linear-gradient(0deg, rgba(251,33,117,1) 0%, rgba(234,76,137,1) 100%);
+    color: #fff;
+    overflow: hidden;
+}
+.btn-11:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.btn-11:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+}
+.btn-11:hover{
+  opacity: .7;
+}
+.btn-11:active{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+
+.custom-btn {
+  width: 190px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  /* ... (other styles) */
+}
+
+@-webkit-keyframes shiny-btn1 {
+    0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+    80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+    81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+    100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+}
+
+ #addBooksButton {
+    margin-bottom: 0; /* You can adjust this value to control the space */
+ 
+  color: #353535;
+  font-size: 18px;
+  font-family: "Cormorant Garamond", serif;
+ 
+ 
+  }
+
+
+</style>
+
+
+          
+          
+                
+                
+<form  action="#"  th:action="@{/indexx}"   >
+ 
+  
+  
+<!--                       <input type="submit" value="Add Books" class="btn-primary">
+ -->                      
+                      
+<!-- <button class=" btn-11"><span>Click!</span><span>Add Books</span></button>       
+ -->
+       <button class="custom-btn btn-11"  id="addBooksButton"     >Add Books<div class="dot"></div></button>
+               
+  
+</form>
+                
+           
+                            
+                
+<form  action="#"  th:action="@{/show}"   >
+ 
+  
+  
+<!--                       <input type="submit" value="Show Books" class="btn-primary">
+ --> 
+ 
+ 
+<!--   <button class=" btn-12"><span>Click!</span><span>Show Books</span></button>                      
+ -->  
+  
+         <button class="custom-btn btn-11"  id="addBooksButton"  >Show Books<div class="dot"></div></button>
+  
+  
+</form>
+
+
+              <form  action="#"  th:action="@{/showhistory}"   >
+ 
+  
+<!--   <button class=" btn-12"><span>Click!</span><span> Books  History</span></button>  
+ --><!--                       <input type="submit" value=" Books   History"  class="btn-primary">
+ -->  
+ 
+ 
+        <button class="custom-btn btn-11"  id="addBooksButton"     >Books  History<div class="dot"></div></button>
+ 
+</form>
+            </div>
+            <div class="dashboard-item">
+                
+                
+                <form  action="#" th:object="${obj}" th:action="@{/search}"   >
+ 
+<h2>Search Books</h2>
+<input type="text" id="title" name="title" th:field="*{title}"  class="search"  >
+  
+<!-- <button class=" btn-12"><span>Click!</span><span>Search</span></button>                      
+ -->  
+          <button class="custom-btn btn-11"  id="addBooksButton"     >Search<div class="dot"></div></button>
+  
+<!--   <button type="submit" class="btn btn-primary mb-2">Search</button>
+ --></form>
+                
+                
+                
+                        
+<form  action="#"  th:action="@{/outofstockk}"   >
+ 
+<!--   <button class=" btn-12"><span>Click!</span><span>Out Of Stock</span></button>                      
+ -->  
+            <button class="custom-btn btn-11"  id="addBooksButton"     >Out Of Stock<div class="dot"></div></button>
+  
+<!--                       <input type="submit" value="Out Of Stock" class="btn-primary">
+ -->  
+</form>
+          
+          
+              
+                
+                
+                
+                
+            </div>
+            <div class="dashboard-item">
+                <h2>Customer Demand</h2>
+                               
+<form  action="#"  th:action="@{/demands}"   >
+ 
+  
+<!--     <button class=" btn-12"><span>Click!</span><span>Customer Demands</span></button>                      
+ -->  
+<!--                       <input type="submit" value="Costumers Demands" class="btn-primary">
+ -->  
+ 
+             <button class="custom-btn btn-11"  id="addBooksButton"     >Customer Demand<div class="dot"></div></button>
+ 
+ 
+</form>
+              
+               <form  action="#"  th:action="@{/showdemands}"   >
+ 
+  
+<!--       <button class=" btn-12"><span>Click!</span><span>Show Demands</span></button>                      
+ -->  
+<!--                       <input type="submit" value="Show Demands" class="btn-primary">
+ -->  
+ 
+              <button class="custom-btn btn-11"  id="addBooksButton"     >Show Demands<div class="dot"></div></button>
+ 
+</form>
+            </div>
+            <div class="dashboard-item">
+                <h2>Billing</h2>
+                
+                
+                
+                <form  action="#"  th:action="@{/generatedbill}"   >
+ 
+  
+<!--         <button class=" btn-12"><span>Click!</span><span>Generated Bill</span></button>                      
+ -->  
+<!--                       <input type="submit" value="Generated Bill" class="btn-primary">
+ -->  
+ 
+               <button class="custom-btn btn-11"  id="addBooksButton"     >Generated Bill<div class="dot"></div></button>
+ 
+</form>
+                 <form  action="#"  th:action="@{/clientshow}"   >
+ 
+  
+<!--           <button class=" btn-12"><span>Click!</span><span>Customer History</span></button>     
+ -->          
+                         <button class="custom-btn btn-11"  id="addBooksButton"     >Customer History<div class="dot"></div></button>
+          
+                           
+  
+<!--                       <input type="submit" value="Client History" class="btn-primary">
+ -->  
+</form>
+
+
+            </div>
+        </div>
+    </div>
+<!--     ////////////////////////////////////////////////////////////////////////////////////////////////////
+ -->    
+ 
+ 
+ <style>
+ 
+ 
+ 
+/* body{
+	background: #db7777;
+	font-family: sans-serif;
+	padding-top: 550px;
+} */
+
+
+
+h6 {
+	font-family: sans-serif ;
+}
+
+ul{
+
+	position: absolute;
+	top: 70%;
+	left: 10%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	margin: 0;
+	padding: 0;
+	
+	
+	
+}
+
+ul li {
+	font-size: 20px;
+	list-style: none;
+	margin: 0 5px;
+}
+
+ul il a .fa {
+
+	font-size: 60px;
+	color: #333;
+	line-height: 80px;
+	transition: 0.5s;
+	padding-right: 14px;
+}
+
+ul li span {
+
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 30px;
+	color: #333;
+	letter-spacing: 4px;
+	transition: 0.5s;
+}
+
+ul li a {
+	text-decoration: none;
+	display: absolute;
+	display: block;
+	width: 210px;
+	height: 80px;
+	background: #fff;
+	text-align: left;
+	padding-left: 20px;
+	transform: rotate(-30deg) skewX(25deg) translate(0,0);
+	transition: 0.5s;
+	box-shadow: -20px 20px 10px rgba(0,0,0,0.5);
+
+}
+
+ul li a:before {
+
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: -20px;
+	height: 100%;
+	width: 20px;
+	background: #b1b1b1;
+	transform: 0.5s;
+	transform: rotate(0deg) skewY(-45deg);
+}
+
+ul li a:after {
+
+	content: '';
+	position: absolute;
+	bottom: -20px;
+	left: -10px;
+	height: 20px;
+	width: 100%;
+	background: #b1b1b1;
+	transform: 0.5s;
+	transform: rotate(0deg) skewX(-45deg);
+}
+
+ul li a:hover {
+	transform: rotate(-30deg) skew(25deg) translate(30px,-15px);
+	box-shadow: -50px 50px 50px rgba(0,0,0,0.5);
+}
+
+ul li:hover .fa {
+
+	color: #fff;
+}
+
+ul li:hover span {
+
+	color: #fff;
+}
+
+ul li:hover a {
+
+	background: #9790DD;
+}
+
+ul li:hover a:before {
+
+	background: #9790DD;
+}
+
+ul li:hover a:after {
+
+	background: #9790DD;
+}
+ 
+ 
+ </style>
+ 
+ 
+    <ul>
+	<li>
+		<a href="/logout">
+
+		<span><i class="fas fa-thumbs-up"></i> - Logout</span>
+		</a>
+	</li>
+	
+</ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchForm = document.querySelector("#searchForm");
+
+            searchForm.addEventListener("submit", function (event) {
+                const searchInput = document.querySelector("#searchname");
+                if (searchInput.value.trim() === "") {
+                    event.preventDefault(); // Prevent form submission
+                    alert("Please enter a search term.");
+                }
+            });
+        });
+    </script>
 </body>
 </html>

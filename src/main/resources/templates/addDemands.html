@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+<style>
+
+
+ h1 {
+  position: relative;
+  text-align: center;
+  color: #353535;
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        
+          a.button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #00DA98; /* Greenish color for the button */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+
+<h1> Customer Demands</h1>
+
+<a href="/" class="button">HOME</a>
+
+
+<form  action="#" th:object="${obj}" th:action="@{/adddemand}"   >
+    <div class="form-group">
+        <label for="title" class="mr-sm-2">Title</label>
+        <input type="text" th:field="*{title}" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="language" class="mr-sm-2">Language</label>
+        <select class="custom-select mr-sm-2" th:field="*{language}">
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+             <option value="Marathi">Marathi</option>
+             <option value="Hindi">Hindi</option>
+        </select>
+    </div>
+
+ 
+    
+   
+       <div class="form-group">
+        <label for="title" class="mr-sm-2">Quantity</label>
+        <input type="text" th:field="*{quantity}" class="form-control">
+    </div>
+    
+    
+
+    <button type="submit" class="btn btn-primary mb-2">Add The Books</button>
+</form>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

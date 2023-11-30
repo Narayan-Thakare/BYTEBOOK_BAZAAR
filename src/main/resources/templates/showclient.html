@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+ <style>
+ 
+     h1 {
+  position: relative;
+  text-align: center;
+  color: #353535;
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+}
+ 
+    a.button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #00DA98; /* Greenish color for the button */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #4CAF50; /* Dark green color for table headers */
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2; /* Light grayish color for even rows */
+    }
+
+    a {
+        text-decoration: none;
+        margin-right: 10px;
+        color: #333;
+    }
+
+    a:hover {
+        color: #DDDBA5; /* Dark green color on hover */
+    }
+        a.button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #00DA98; /* Greenish color for the button */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+</style>
+
+
+</head>
+<body>
+
+
+<h1>Customer History</h1>
+    <a href="/" class="button">HOME</a>
+
+  <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>total</th>
+           
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="book : ${show}">
+            <td th:text="${book.name}">Name</td>
+            <td th:text="${book.title}">Title</td>
+            <td th:text="${book.date}">date</td>
+            <td th:text="${book.total}">0</td>
+           
+         
+           
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

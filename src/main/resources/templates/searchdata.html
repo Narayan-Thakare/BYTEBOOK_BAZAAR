@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+  <style>
+  
+  
+   h1 {
+  position: relative;
+  text-align: center;
+  color: #353535;
+  font-size: 50px;
+  font-family: "Cormorant Garamond", serif;
+}
+    a.button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #00DA98; /* Greenish color for the button */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #4CAF50; /* Dark green color for table headers */
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2; /* Light grayish color for even rows */
+    }
+
+    a {
+        text-decoration: none;
+        margin-right: 10px;
+        color: #333;
+    }
+
+    a:hover {
+        color: #DDDBA5; /* Dark green color on hover */
+    }
+</style>
+
+</head>
+<body>
+  <h1> Search Book Dashboard</h1>
+    <a href="/" class="button">HOME</a>
+
+
+
+
+  <table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Language</th>
+            <th>Number of Pages</th>
+            <th>Genre</th>
+            <th>Quantity</th>
+            <th>Rate</th>
+            <th>Total</th>
+                        <th>Date</th>
+                        <th>Add Books</th>
+                                    <th>Sell Books</th>
+            
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="book : ${searchob}">
+            <td th:text="${book.title}">Default Title</td>
+            <td th:text="${book.author}">Default Author</td>
+            <td th:text="${book.language}">Default Language</td>
+            <td th:text="${book.number_of_pages}">0</td>
+            <td th:text="${book.genre}">Default Genre</td>
+            <td th:text="${book.quantity}">0</td>
+            <td th:text="${book.rate}">0</td>
+            <td th:text="${book.quantity * book.rate}">0</td>
+                        <td th:text="${book.date}">0</td>
+                        
+               <td>
+                <a th:href="@{'/addBook/' + ${book.id}}"  class="button"  >Add Books</a>
+            </td>   
+            <td>
+                <a th:href="@{'/sellBook/' + ${book.id}}"  class="button"  >Sell Books</a>
+            </td>         
+            <td>
+                <a th:href="@{'/delete/' + ${book.id}}"   class="button"  onclick="return confirm('Are you sure you want to delete this book?')" >Delete</a>
+                <a th:href="@{'/update/' + ${book.id}}"  class="button"    >Update</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
