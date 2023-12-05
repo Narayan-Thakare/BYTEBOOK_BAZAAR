@@ -10,5 +10,8 @@
 # WHEN WE CLICK ON ADD 
 ![Screenshot 2023-12-05 225935](https://github.com/Narayan-Thakare/BYTEBOOK_BAZAAR-/assets/113063658/b42a56d0-0941-4118-a37b-5845fedf5cba)
 
+# WHEN WE CLICK ON BOOKS HISTORY
+![Screenshot 2023-12-05 225911](https://github.com/Narayan-Thakare/BYTEBOOK_BAZAAR-/assets/113063658/8df05ac5-19a7-4a76-8190-b37cc5723f3b)
+
 
 
