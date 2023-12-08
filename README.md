@@ -16,6 +16,8 @@
 ![Screenshot 2023-12-07 224759](https://github.com/Narayan-Thakare/BYTEBOOK_BAZAAR-/assets/113063658/2d8e12c5-3059-488f-964d-74c40799c4c4)
 # WHEN WE CLICK ON SELL BOOK
 ![Screenshot 2023-12-07 224820](https://github.com/Narayan-Thakare/BYTEBOOK_BAZAAR-/assets/113063658/0ae2cff9-82bd-439d-8b86-08dcf86f5c2e)
+# WHEN WE CLICK ON SEARCH 
+
 
 
 
