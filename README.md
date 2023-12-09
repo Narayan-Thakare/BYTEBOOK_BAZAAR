@@ -20,8 +20,11 @@
 ![Screenshot 2023-12-08 233357](https://github.com/Narayan-Thakare/BYTEBOOK_BAZAAR-/assets/113063658/4c2e7f3c-99e9-4400-940b-35b89847bc4d)
 # WHEN WE CLICK ON OUT OF STOCK
 ![Screenshot 2023-12-08 233410](https://github.com/Narayan-Thakare/BYTEBOOK_BAZAAR-/assets/113063658/04673dbc-5ccb-4136-9168-518cb81ebd93)
-# WHEN WE CLICK ON COSTNER DEMANDS
+# WHEN WE CLICK ON COSTMER DEMANDS
 ![Screenshot 2023-12-09 122354](https://github.com/Narayan-Thakare/BYTEBOOK_BAZAAR-/assets/113063658/54dfb42a-2a2b-4761-ad11-771272bd8cc6)
+# WHEN WE CLICK ON COSTMER SHOW DEMANDS
+![Screenshot 2023-12-09 122409](https://github.com/Narayan-Thakare/BYTEBOOK_BAZAAR-/assets/113063658/6d556781-cdcb-47e6-8a42-739023fad7d3)
+
 
 
 
