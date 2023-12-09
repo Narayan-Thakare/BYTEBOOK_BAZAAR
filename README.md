@@ -25,7 +25,14 @@
 # WHEN WE CLICK ON COSTMER SHOW DEMANDS
 ![Screenshot 2023-12-09 122409](https://github.com/Narayan-Thakare/BYTEBOOK_BAZAAR-/assets/113063658/6d556781-cdcb-47e6-8a42-739023fad7d3)
 
-
+## Table of Contents
+- [Introduction](#introduction)
+- [Screenshots](#screenshots)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
 
 
